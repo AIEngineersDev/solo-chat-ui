@@ -13,6 +13,7 @@ import JSON5 from "json5";
 import { getTokenizer } from "$lib/utils/getTokenizer";
 import { logger } from "$lib/server/logger";
 import { ToolResultStatus } from "$lib/types/Tool";
+import soloConfigTemplate from "./constant/soloConfigTemplate";
 
 type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;
 
@@ -67,7 +68,7 @@ const modelConfig = z.object({
 	embeddingModel: validateEmbeddingModelByName(embeddingModels).optional(),
 });
 
-const modelsRaw = z.array(modelConfig).parse(JSON5.parse(env.MODELS));
+const modelsRaw = z.array(modelConfig).parse(soloConfigTemplate[env.MODEL]);
 
 async function getChatPromptRender(
 	m: z.infer<typeof modelConfig>
