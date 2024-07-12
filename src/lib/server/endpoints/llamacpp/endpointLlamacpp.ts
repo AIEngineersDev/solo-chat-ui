@@ -29,22 +29,22 @@ export function endpointLlamacpp(
 		});
 
 		const parameters = { ...model.parameters, ...generateSettings };
-
 		const r = await fetch(`${url}/completion`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
+				...parameters,
 				prompt,
-				stream: true,
-				temperature: parameters.temperature,
-				top_p: parameters.top_p,
-				top_k: parameters.top_k,
-				stop: parameters.stop,
-				repeat_penalty: parameters.repetition_penalty,
-				n_predict: parameters.max_new_tokens,
-				cache_prompt: true,
+				// stream: true,
+				// temperature: parameters.temperature,
+				// top_p: parameters.top_p,
+				// top_k: parameters.top_k,
+				// stop: parameters.stop,
+				// repeat_penalty: parameters.repetition_penalty,
+				// n_predict: parameters.max_new_tokens,
+				// cache_prompt: true,
 			}),
 		});
 
