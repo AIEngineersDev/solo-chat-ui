@@ -28,7 +28,7 @@ export default defineConfig({
 	optimizeDeps: {
 		include: ["browser-image-resizer", "uuid", "@xenova/transformers"],
 	},
-	server: {
-		open: "/",
-	},
+	// server: {
+	// 	open: "/",
+	// },
 });
