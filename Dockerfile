@@ -73,7 +73,7 @@ ENV HOME=/home/user \
 WORKDIR /app
 
 # add a .env.local if the user doesn't bind a volume to it
-RUN touch /app/.env.local
+# RUN touch /app/.env.local
 
 # get the default config, the entrypoint script and the server script
 COPY --chown=1000 package.json /app/package.json
