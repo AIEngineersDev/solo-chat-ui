@@ -9,7 +9,7 @@ export const endpointLlamacppParametersSchema = z.object({
 	weight: z.number().int().positive().default(1),
 	model: z.any(),
 	type: z.literal("llamacpp"),
-	url: z.string().url().default("http://127.0.0.1:8000"),
+	url: z.string().url().default("http://solo-server:8000"),
 	accessToken: z
 		.string()
 		.min(1)
